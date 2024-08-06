@@ -1,10 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
+  import { Progress } from "$lib/components/ui/progress";
   import { puppeteerInstall } from "$lib/puppeteerInstall";
 
-  let progressMax = 1;
   let progressValue = 0;
+  let progressMax = 1;
 
   onMount(async () => {
     await puppeteerInstall((downloadedBytes, totalBytes) => {
@@ -16,6 +17,4 @@
   });
 </script>
 
-<div>
-  <progress max={progressMax} value={progressValue} />
-</div>
+<Progress value={progressValue} max={progressMax} />

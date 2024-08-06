@@ -1,5 +1,9 @@
 {
-  "plugins": ["prettier-plugin-svelte", "@ianvs/prettier-plugin-sort-imports"],
+  "plugins": [
+    "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss",
+    "@ianvs/prettier-plugin-sort-imports"
+  ],
   "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }],
 
   "importOrderTypeScriptVersion": "5.5.4",

@@ -1,12 +1,7 @@
 import { homedir } from "node:os";
 import { join } from "node:path";
 
-import {
-  Browser,
-  detectBrowserPlatform,
-  install,
-  resolveBuildId,
-} from "@puppeteer/browsers";
+import { Browser, detectBrowserPlatform, install, resolveBuildId } from "@puppeteer/browsers";
 import { PUPPETEER_REVISIONS } from "puppeteer-core/internal/revisions.js";
 
 // Based on:
@@ -22,9 +17,7 @@ if (!platform) {
 const cacheDir = join(homedir(), ".cache", "puppeteer");
 
 async function installBrowser(browser: Browser) {
-  const tag =
-    PUPPETEER_REVISIONS[browser as keyof typeof PUPPETEER_REVISIONS] ||
-    "latest";
+  const tag = PUPPETEER_REVISIONS[browser as keyof typeof PUPPETEER_REVISIONS] || "latest";
 
   return await install({
     browser,
