@@ -1,0 +1,48 @@
+{
+  "build": {
+    "beforeDevCommand": "bun run --bun dev",
+    "beforeBuildCommand": "bun run --bun build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../build"
+  },
+  "package": {
+    "productName": "WAPro",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "shell": {
+        "sidecar": true,
+        "scope": [
+          {
+            "name": "../dist/puppeteerInstall",
+            "sidecar": true
+          }
+        ]
+      }
+    },
+    "windows": [
+      {
+        "title": "WAPro",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.luisafk.wapro",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "externalBin": ["../dist/puppeteerInstall"]
+    }
+  }
+}
