@@ -17,4 +17,6 @@
   });
 </script>
 
-<Progress value={progressValue} max={progressMax} />
+<div class="flex size-full items-center justify-center">
+  <Progress value={progressValue} max={progressMax} />
+</div>
